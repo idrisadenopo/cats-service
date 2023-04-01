@@ -1,5 +1,6 @@
 import { ConfigService } from '@nestjs/config';
 import { Test, TestingModule } from '@nestjs/testing';
+import { FavouritesService } from '../favourites/favourites.service';
 import { CatsController } from './cats.controller';
 import { CatsService } from './cats.service';
 
@@ -8,7 +9,7 @@ describe('CatsController', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [CatsService, ConfigService],
+      providers: [CatsService, ConfigService, FavouritesService],
       controllers: [CatsController],
     }).compile();
 
@@ -17,7 +18,7 @@ describe('CatsController', () => {
 
   describe('cats', () => {
     it('should return 5 cats', () => {
-      expect(controller.getFiveCats().length).toBe(5);
+      expect(controller.getFiveCats().cats.length).toBe(5);
     });
   });
 

@@ -2,10 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Cat } from './interfaces/cat.interface';
 import { sample, shuffle } from 'lodash';
+import { FavouritesService } from '../favourites/favourites.service';
 
 @Injectable()
 export class CatsService {
-  constructor(private configService: ConfigService) {}
+  constructor(
+    private configService: ConfigService,
+    private favouritesService: FavouritesService,
+  ) {}
 
   private imageBaseUrl = this.configService.get('IMAGE_BASE_URL');
 
@@ -73,5 +77,17 @@ export class CatsService {
 
   findCat(id: number) {
     return this.cats.find((cat) => cat.id === id);
+  }
+
+  getFavouriteCats(userSessionId: string) {
+    const favourites = this.favouritesService.findAll(userSessionId);
+    return favourites.map<Cat>((favourite) => {
+      const cat = this.cats.find((cat) => cat.id === favourite.catId);
+      return {
+        id: cat.id,
+        name: cat.name,
+        url: cat.url,
+      };
+    });
   }
 }

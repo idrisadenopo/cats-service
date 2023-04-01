@@ -5,6 +5,7 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CatsModule } from './cats/cats.module';
+import { FavouritesModule } from './favourites/favourites.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { CatsModule } from './cats/cats.module';
       serveRoot: '/public/',
     }),
     ConfigModule.forRoot(),
+    FavouritesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

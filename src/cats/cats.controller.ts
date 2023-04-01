@@ -1,4 +1,5 @@
-import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe, Req } from '@nestjs/common';
+import { Request } from 'express';
 import { CatsService } from './cats.service';
 
 @Controller('cats')
@@ -7,12 +8,18 @@ export class CatsController {
 
   @Get()
   getFiveCats() {
-    return this.catsService.getRandomCats();
+    return { cats: this.catsService.getRandomCats() };
   }
 
   @Get('/cat')
   getCat() {
     return this.catsService.getRandomCat();
+  }
+
+  @Get('favourites')
+  getFavouriteCats(@Req() request: Request) {
+    const userSessionId = request.session.id;
+    return { cats: this.catsService.getFavouriteCats(userSessionId) };
   }
 
   @Get(':id')
