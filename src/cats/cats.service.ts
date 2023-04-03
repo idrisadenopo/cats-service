@@ -17,52 +17,53 @@ export class CatsService {
     {
       id: 1,
       name: 'Leone',
-      url: this.imageBaseUrl + 'pexels-evg-kowalievska-1170986.jpg',
+      url: this.imageBaseUrl + '/public/pexels-evg-kowalievska-1170986.jpg',
     },
     {
       id: 2,
       name: 'Leila',
-      url: this.imageBaseUrl + 'pexels-alena-koval-982300.jpg',
+      url: this.imageBaseUrl + '/public/pexels-alena-koval-982300.jpg',
     },
     {
       id: 3,
       name: 'Maurice',
-      url: this.imageBaseUrl + 'pexels-cong-h-1404819.jpg',
+      url: this.imageBaseUrl + '/public/pexels-cong-h-1404819.jpg',
     },
     {
       id: 4,
       name: 'LadyK',
-      url: this.imageBaseUrl + 'pexels-dominika-roseclay-977935.jpg',
+      url: this.imageBaseUrl + '/public/pexels-dominika-roseclay-977935.jpg',
     },
     {
       id: 5,
       name: 'Thomas',
-      url: this.imageBaseUrl + 'pexels-dominika-roseclay-2686914.jpg',
+      url: this.imageBaseUrl + '/public/pexels-dominika-roseclay-2686914.jpg',
     },
     {
       id: 6,
       name: 'Robin',
-      url: this.imageBaseUrl + 'pexels-guillaume-meurice-1317844.jpg',
+      url: this.imageBaseUrl + '/public/pexels-guillaume-meurice-1317844.jpg',
     },
     {
       id: 7,
       name: 'Askalad',
-      url: this.imageBaseUrl + 'pexels-just-a-couple-photos-3777622.jpg',
+      url:
+        this.imageBaseUrl + '/public/pexels-just-a-couple-photos-3777622.jpg',
     },
     {
       id: 8,
       name: 'Tim',
-      url: this.imageBaseUrl + 'pexels-lina-kivaka-1741206.jpg',
+      url: this.imageBaseUrl + '/public/pexels-lina-kivaka-1741206.jpg',
     },
     {
       id: 9,
       name: 'Fluffy',
-      url: this.imageBaseUrl + 'pexels-matteo-petralli-1828875.jpg',
+      url: this.imageBaseUrl + '/public/pexels-matteo-petralli-1828875.jpg',
     },
     {
       id: 10,
       name: 'Louis',
-      url: this.imageBaseUrl + 'pexels-peng-louis-1643457.jpg',
+      url: this.imageBaseUrl + '/public/pexels-peng-louis-1643457.jpg',
     },
   ];
 
