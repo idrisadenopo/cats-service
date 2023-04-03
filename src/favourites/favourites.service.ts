@@ -8,7 +8,8 @@ export class FavouritesService {
   private favourites: FavouriteEntity[] = [];
   create(userSessionId: string, catId: number): Favourite {
     const alreadyFavourited = this.favourites.some(
-      (favourite) => favourite.catId === catId,
+      (favourite) =>
+        favourite.catId === catId && favourite.userSessionId === userSessionId,
     );
 
     if (!alreadyFavourited) {
