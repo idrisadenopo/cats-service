@@ -7,13 +7,15 @@ export class CatsController {
   constructor(private readonly catsService: CatsService) {}
 
   @Get()
-  getFiveCats() {
-    return { cats: this.catsService.getRandomCats() };
+  getFiveCats(@Req() request: Request) {
+    const userSessionId = request.session.id;
+    return { cats: this.catsService.getRandomCats(userSessionId) };
   }
 
   @Get('/cat')
-  getCat() {
-    return this.catsService.getRandomCat();
+  getCat(@Req() request: Request) {
+    const userSessionId = request.session.id;
+    return this.catsService.getRandomCat(userSessionId);
   }
 
   @Get('favourites')

@@ -66,12 +66,30 @@ export class CatsService {
     },
   ];
 
-  getRandomCat() {
-    return sample(this.cats);
+  private getUserNonFavouriteCats(userSessionId: string) {
+    const favourites = this.favouritesService.findAll(userSessionId);
+    console.log('favourite cats', favourites);
+    if (favourites.length > 0) {
+      const filteredCats = this.cats.filter((cat) => {
+        const found = favourites.some((favourite) => {
+          return favourite.catId === cat.id;
+        });
+        return !found;
+      });
+      console.log('filteredCats', filteredCats);
+      return filteredCats;
+    }
+    return this.cats;
   }
 
-  getRandomCats() {
-    const shuffledCats = shuffle(this.cats);
+  getRandomCat(userSessionId: string) {
+    const filteredCats = this.getUserNonFavouriteCats(userSessionId);
+    return sample(filteredCats);
+  }
+
+  getRandomCats(userSessionId: string) {
+    const filteredCats = this.getUserNonFavouriteCats(userSessionId);
+    const shuffledCats = shuffle(filteredCats);
     return shuffledCats.slice(0, 5);
   }
 
