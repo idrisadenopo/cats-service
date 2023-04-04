@@ -1,5 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { Favourite } from './interfaces/favourite.interface';
+import { Favourite } from './dto/favourite.dto';
 import { FavouriteEntity as FavouriteEntity } from './entities/favourite.entity';
 import { v4 as uuidv4 } from 'uuid';
 

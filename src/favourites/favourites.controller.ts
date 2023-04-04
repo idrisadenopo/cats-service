@@ -10,9 +10,10 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { FavouritesService } from './favourites.service';
-import { CreateFavouriteDto } from './dto/create-favourite.dto';
+import { CreateFavourite } from './dto/create-favourite.dto';
 import { Request } from 'express';
-import { Favourite } from './interfaces/favourite.interface';
+import { Favourite } from './dto/favourite.dto';
+import { Favourites } from './dto/favourites.dto';
 
 declare module 'express-session' {
   interface SessionData {
@@ -23,11 +24,17 @@ declare module 'express-session' {
 export class FavouritesController {
   constructor(private readonly favouritesService: FavouritesService) {}
 
+  /**
+   * Create a favourite link between a user and a cat
+   * @param createFavouriteDto
+   * @param request
+   * @returns
+   */
   @Post()
   create(
-    @Body() createFavouriteDto: CreateFavouriteDto,
+    @Body() createFavouriteDto: CreateFavourite,
     @Req() request: Request,
-  ) {
+  ): Favourite {
     const { id } = request.session;
     let { favourites } = request.session;
     const { catId } = createFavouriteDto;
@@ -56,12 +63,22 @@ export class FavouritesController {
     }
   }
 
+  /**
+   * Gets all favourites for a user
+   * @param request
+   * @returns
+   */
   @Get()
-  findAll(@Req() request: Request) {
+  findAll(@Req() request: Request): Favourites {
     const sessionId = request.session.id;
     return { favourites: this.favouritesService.findAll(sessionId) };
   }
 
+  /**
+   * Delete the link between a user and cat
+   * @param id
+   * @param request
+   */
   @Delete(':id')
   remove(@Param('id') id: string, @Req() request: Request) {
     let { favourites } = request.session;

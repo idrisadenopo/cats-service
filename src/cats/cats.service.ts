@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { Cat } from './interfaces/cat.interface';
+import { Cat } from './dto/cat.dto';
 import { sample, shuffle } from 'lodash';
 import { FavouritesService } from '../favourites/favourites.service';
 
