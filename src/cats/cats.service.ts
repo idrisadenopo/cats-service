@@ -11,263 +11,465 @@ export class CatsService {
     private favouritesService: FavouritesService,
   ) {}
 
-  private imageBaseUrl = this.configService.get('IMAGE_BASE_URL');
-
   private cats: Cat[] = [
     {
       id: 1,
       name: 'Leone',
-      url: this.imageBaseUrl + '/public/IMG_7960.JPG',
+      imageData: {
+        urlPath: '/IMG_7960.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 2,
       name: 'Leila',
-      url: this.imageBaseUrl + '/public/IMG_7966.JPG',
+      imageData: {
+        urlPath: '/IMG_7966.JPG',
+        width: 640,
+        height: 856,
+      },
     },
     {
       id: 3,
       name: 'Priscilla',
-      url: this.imageBaseUrl + '/public/IMG_7963.JPG',
+      imageData: {
+        urlPath: '/IMG_7963.JPG',
+        width: 640,
+        height: 427,
+      },
     },
     {
       id: 4,
       name: 'LadyK',
-      url: this.imageBaseUrl + '/public/IMG_7965.JPG',
+      imageData: {
+        urlPath: '/IMG_7965.JPG',
+        width: 640,
+        height: 945,
+      },
     },
     {
       id: 5,
       name: 'Thomas',
-      url: this.imageBaseUrl + '/public/IMG_7969.JPG',
+      imageData: {
+        urlPath: '/IMG_7969.JPG',
+        width: 640,
+        height: 907,
+      },
     },
     {
       id: 6,
       name: 'Robin',
-      url: this.imageBaseUrl + '/public/IMG_7968.JPG',
+      imageData: {
+        urlPath: '/IMG_7968.JPG',
+        width: 640,
+        height: 720,
+      },
     },
     {
       id: 7,
       name: 'Askalad',
-      url: this.imageBaseUrl + '/public/IMG_7964.JPG',
+      imageData: {
+        urlPath: '/IMG_7964.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 8,
       name: 'Tim',
-      url: this.imageBaseUrl + '/public/IMG_7959.JPG',
+      imageData: {
+        urlPath: '/IMG_7959.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 9,
       name: 'Fluffy',
-      url: this.imageBaseUrl + '/public/IMG_7962.JPG',
+      imageData: {
+        urlPath: '/IMG_7962.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 10,
       name: 'Louis',
-      url: this.imageBaseUrl + '/public/IMG_7961.JPG',
+      imageData: {
+        urlPath: '/IMG_7961.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 11,
       name: 'Husky',
-      url: this.imageBaseUrl + '/public/IMG_5790.JPG',
+      imageData: {
+        urlPath: '/IMG_5790.JPG',
+        width: 3024,
+        height: 4032,
+      },
     },
     {
       id: 12,
-      name: 'Moana',
-      url: this.imageBaseUrl + '/public/IMG_7958.JPG',
+      name: 'Bonny',
+      imageData: {
+        urlPath: '/IMG_7958.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 13,
-      name: 'Granny',
-      url: this.imageBaseUrl + '/public/IMG_7967.JPG',
+      name: 'Moana',
+      imageData: {
+        urlPath: '/IMG_7967.JPG',
+        width: 640,
+        height: 640,
+      },
     },
     {
       id: 14,
-      name: 'Yoga',
-      url: this.imageBaseUrl + '/public/IMG_7970.JPG',
+      name: 'Granny',
+      imageData: {
+        urlPath: '/IMG_7970.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 15,
-      name: 'Nostalgia',
-      url: this.imageBaseUrl + '/public/IMG_7971.JPG',
+      name: 'Yoga',
+      imageData: {
+        urlPath: '/IMG_7971.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 16,
-      name: 'Beethoven',
-      url: this.imageBaseUrl + '/public/IMG_7972.JPG',
+      name: 'Nostalgia',
+      imageData: {
+        urlPath: '/IMG_7972.JPG',
+        width: 640,
+        height: 894,
+      },
     },
     {
       id: 17,
-      name: 'Esmeralda',
-      url: this.imageBaseUrl + '/public/IMG_7973.JPG',
+      name: 'Bethoven',
+      imageData: {
+        urlPath: '/IMG_7973.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 18,
-      name: 'Jackson',
-      url: this.imageBaseUrl + '/public/IMG_7974.JPG',
+      name: 'Esmeralda',
+      imageData: {
+        urlPath: '/IMG_7974.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 19,
-      name: 'Newton',
-      url: this.imageBaseUrl + '/public/IMG_7975.JPG',
+      name: 'Jackson',
+      imageData: {
+        urlPath: '/IMG_7975.JPG',
+        width: 640,
+        height: 959,
+      },
     },
     {
       id: 20,
-      name: 'Aesthetic',
-      url: this.imageBaseUrl + '/public/IMG_7976.JPG',
+      name: 'Newton',
+      imageData: {
+        urlPath: '/IMG_7976.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 21,
-      name: 'Cuddly',
-      url: this.imageBaseUrl + '/public/IMG_7977.JPG',
+      name: 'Aesthetic',
+      imageData: {
+        urlPath: '/IMG_7977.JPG',
+        width: 640,
+        height: 853,
+      },
     },
     {
       id: 22,
-      name: 'The horror',
-      url: this.imageBaseUrl + '/public/IMG_7978.JPG',
+      name: 'Cuddly',
+      imageData: {
+        urlPath: '/IMG_7978.JPG',
+        width: 640,
+        height: 427,
+      },
     },
     {
       id: 23,
-      name: 'Modanisa',
-      url: this.imageBaseUrl + '/public/IMG_7979.JPG',
+      name: 'The Horror',
+      imageData: {
+        urlPath: '/IMG_7979.JPG',
+        width: 640,
+        height: 427,
+      },
     },
     {
       id: 24,
-      name: 'Henry the second',
-      url: this.imageBaseUrl + '/public/IMG_7980.JPG',
+      name: 'Modanisa',
+      imageData: {
+        urlPath: '/IMG_7980.JPG',
+        width: 640,
+        height: 837,
+      },
     },
     {
       id: 25,
-      name: 'Daisy',
-      url: this.imageBaseUrl + '/public/IMG_7981.JPG',
+      name: 'Lizzy',
+      imageData: {
+        urlPath: '/IMG_7981.JPG',
+        width: 640,
+        height: 958,
+      },
     },
     {
       id: 26,
-      name: 'Felipe',
-      url: this.imageBaseUrl + '/public/IMG_7982.JPG',
+      name: 'Daisy',
+      imageData: {
+        urlPath: '/IMG_7982.JPG',
+        width: 640,
+        height: 360,
+      },
     },
     {
       id: 27,
-      name: 'Marcus',
-      url: this.imageBaseUrl + '/public/IMG_7983.JPG',
+      name: 'Felipe',
+      imageData: {
+        urlPath: '/IMG_7983.JPG',
+        width: 640,
+        height: 427,
+      },
     },
     {
       id: 28,
-      name: 'Eva',
-      url: this.imageBaseUrl + '/public/IMG_7984.JPG',
+      name: 'Marcus',
+      imageData: {
+        urlPath: '/IMG_7984.JPG',
+        width: 640,
+        height: 1138,
+      },
     },
     {
       id: 29,
-      name: 'Vlad',
-      url: this.imageBaseUrl + '/public/IMG_7985.JPG',
+      name: 'Eva',
+      imageData: {
+        urlPath: '/IMG_7985.JPG',
+        width: 640,
+        height: 855,
+      },
     },
     {
       id: 30,
-      name: 'Snowball',
-      url: this.imageBaseUrl + '/public/IMG_7986.JPG',
+      name: 'Vlad',
+      imageData: {
+        urlPath: '/IMG_7986.JPG',
+        width: 640,
+        height: 815,
+      },
     },
     {
       id: 31,
-      name: 'Emerald',
-      url: this.imageBaseUrl + '/public/IMG_7987.JPG',
+      name: 'Snowball',
+      imageData: {
+        urlPath: '/IMG_7987.JPG',
+        width: 640,
+        height: 480,
+      },
     },
     {
       id: 32,
-      name: 'Allison',
-      url: this.imageBaseUrl + '/public/IMG_7988.JPG',
+      name: 'Emerald',
+      imageData: {
+        urlPath: '/IMG_7988.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 33,
-      name: 'Monkey',
-      url: this.imageBaseUrl + '/public/IMG_7989.JPG',
+      name: 'Allison',
+      imageData: {
+        urlPath: '/IMG_7989.JPG',
+        width: 640,
+        height: 981,
+      },
     },
     {
       id: 34,
-      name: 'Lazy',
-      url: this.imageBaseUrl + '/public/IMG_7990.JPG',
+      name: 'Monkey',
+      imageData: {
+        urlPath: '/IMG_7990.JPG',
+        width: 640,
+        height: 971,
+      },
     },
     {
       id: 35,
-      name: 'The thinker',
-      url: this.imageBaseUrl + '/public/IMG_7991.JPG',
+      name: 'Lazy',
+      imageData: {
+        urlPath: '/IMG_7991.JPG',
+        width: 640,
+        height: 853,
+      },
     },
     {
       id: 36,
-      name: 'Snoop cat',
-      url: this.imageBaseUrl + '/public/IMG_7992.JPG',
+      name: 'The thinker',
+      imageData: {
+        urlPath: '/IMG_7992.JPG',
+        width: 640,
+        height: 966,
+      },
     },
     {
       id: 37,
-      name: 'Your majesty',
-      url: this.imageBaseUrl + '/public/IMG_7993.JPG',
+      name: 'Snoop cat',
+      imageData: {
+        urlPath: '/IMG_7993.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 38,
-      name: 'Dora',
-      url: this.imageBaseUrl + '/public/IMG_7994.JPG',
+      name: 'Your majesty',
+      imageData: {
+        urlPath: '/IMG_7994.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 39,
-      name: 'Yoyo',
-      url: this.imageBaseUrl + '/public/IMG_7995.JPG',
+      name: 'Dora',
+      imageData: {
+        urlPath: '/IMG_7995.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 40,
-      name: 'Elizabeth',
-      url: this.imageBaseUrl + '/public/IMG_7996.JPG',
+      name: 'Yoyo',
+      imageData: {
+        urlPath: '/IMG_7996.JPG',
+        width: 6000,
+        height: 4000,
+      },
     },
     {
       id: 41,
-      name: 'Romance',
-      url: this.imageBaseUrl + '/public/IMG_7997.JPG',
+      name: 'Henry The Second',
+      imageData: {
+        urlPath: '/IMG_7997.JPG',
+        width: 640,
+        height: 853,
+      },
     },
     {
       id: 42,
-      name: 'Florist',
-      url: this.imageBaseUrl + '/public/IMG_7998.JPG',
+      name: 'Romance',
+      imageData: {
+        urlPath: '/IMG_7998.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 43,
-      name: 'Snooze',
-      url: this.imageBaseUrl + '/public/IMG_7999.JPG',
+      name: 'Florist',
+      imageData: {
+        urlPath: '/IMG_7999.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 44,
-      name: 'Selfie',
-      url: this.imageBaseUrl + '/public/IMG_8001.JPG',
+      name: 'Snooze',
+      imageData: {
+        urlPath: '/IMG_8001.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 45,
-      name: 'Miss Patel',
-      url: this.imageBaseUrl + '/public/IMG_8002.JPG',
+      name: 'Selfie',
+      imageData: {
+        urlPath: '/IMG_8002.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 46,
-      name: 'Tiger',
-      url: this.imageBaseUrl + '/public/IMG_8003.JPG',
+      name: 'Miss Patel',
+      imageData: {
+        urlPath: '/IMG_8003.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 47,
-      name: 'Bloop',
-      url: this.imageBaseUrl + '/public/IMG_8004.JPG',
+      name: 'Tiger',
+      imageData: {
+        urlPath: '/IMG_8004.JPG',
+        width: 640,
+        height: 960,
+      },
     },
     {
       id: 48,
-      name: 'Mumzy',
-      url: this.imageBaseUrl + '/public/IMG_8005.JPG',
+      name: 'Bloop',
+      imageData: {
+        urlPath: '/IMG_8005.JPG',
+        width: 640,
+        height: 800,
+      },
     },
     {
       id: 49,
-      name: 'Randagio',
-      url: this.imageBaseUrl + '/public/IMG_8007.JPG',
+      name: 'Mumzy',
+      imageData: {
+        urlPath: '/IMG_8007.JPG',
+        width: 640,
+        height: 853,
+      },
     },
     {
       id: 50,
-      name: 'Fufi',
-      url: this.imageBaseUrl + '/public/IMG_8008.JPG',
+      name: 'Randagio',
+      imageData: {
+        urlPath: '/IMG_8008.JPG',
+        width: 640,
+        height: 800,
+      },
     },
     {
       id: 51,
-      name: 'Bonny',
-      url: this.imageBaseUrl + '/public/IMG_8009.JPG',
+      name: 'Fufi',
+      imageData: {
+        urlPath: '/IMG_8009.JPG',
+        width: 640,
+        height: 800,
+      },
     },
   ];
 
@@ -309,7 +511,11 @@ export class CatsService {
       return {
         id: cat.id,
         name: cat.name,
-        url: cat.url,
+        imageData: {
+          urlPath: cat.imageData.urlPath,
+          height: cat.imageData.height,
+          width: cat.imageData.width,
+        },
       };
     });
   }

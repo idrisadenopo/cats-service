@@ -1,3 +1,5 @@
+import { ImageData } from './image.dto';
+
 export class Cat {
   /**
    * The id of the cat
@@ -10,8 +12,7 @@ export class Cat {
    */
   name: string;
   /**
-   * The url to the cats image
-   * @example https://catsservice.com/catpik
+   * Data for loading the cat image
    */
-  url: string;
+  imageData: ImageData;
 }

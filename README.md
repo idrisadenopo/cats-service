@@ -11,7 +11,6 @@ $ npm install
 
 Create a `.env` file with the following variables
 ```bash
-IMAGE_BASE_URL=http://localhost:8080
 SESSION_SECRET={uuid}
 ```
 
@@ -37,7 +36,7 @@ The API and its documentation are live at where the endpoints can be tested [htt
 3. There is no database, however favourites are reloaded from the client if the server restarts and no longer holds that data
 4. The API could be improved; having separate controllers for `.../cats` and `.../favourites` might not be the most intuitive
 5. No ability to remove a cat from favourites
-6. Images are stored in the file system
+6. ~~Images are stored in the file system~~
 7. Testing is poor
 
 ## ⏳ With more time
